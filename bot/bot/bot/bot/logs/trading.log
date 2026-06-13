@@ -1,0 +1,19 @@
+2026-06-13 07:11:30,685 - ERROR - 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1781314888542&signature=1015a0945bd2a9670b6f8a4e8a68f8069c0e9113038dbeabbf37567acb1cef7e
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Desktop\trading_bot\cli.py", line 44, in main
+    response = service.place_market_order(
+        symbol,
+        side,
+        quantity
+    )
+  File "C:\Users\HP\OneDrive\Desktop\trading_bot\bot\orders.py", line 16, in place_market_order
+    return self.client.place_order(params)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\trading_bot\bot\client.py", line 52, in place_order
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\requests\models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1781314888542&signature=1015a0945bd2a9670b6f8a4e8a68f8069c0e9113038dbeabbf37567acb1cef7e
+2026-06-13 07:19:08,529 - INFO - Order Response: {'orderId': 15062473911, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '4f5LuvtSvBXzX9mcYXzLXi', 'price': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1781315348375}
+2026-06-13 07:33:21,765 - INFO - Order Response: {'orderId': 15063153936, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '2SRIunpMSaT6yyThF1F5XT', 'price': '200000.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1781316201609}
